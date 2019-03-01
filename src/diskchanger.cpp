@@ -788,7 +788,7 @@ int DiskChanger::UpdateBacula()
    }
    /* Perform label barcodes command in bconsole */
    if (needs_label) {
-      tFormat(cmd, "label storage=\"%s\" pool=\"%s\" barcodes\nyes\nyes\n", conf.storage_name.c_str(),
+      tFormat(cmd, "label storage=\"%s\" pool=\"%s\" barcodes drive=0\nyes\n", conf.storage_name.c_str(),
             conf.def_pool.c_str());
       if (issue_bconsole_command(cmd.c_str())) {
          log.Error("WARNING! 'label barcodes' needed in bconsole");
