@@ -74,7 +74,7 @@ int issue_bconsole_command(const char *bcmd)
       cmd += " -c ";
       cmd += conf.bconsole_config;
    }
-   cmd += " -n -u 30";
+   cmd += " -u 30";
    /* Start bconsole process */
    log.Debug("bconsole: running '%s'", bcmd);
    pid = mypopen_raw(cmd.c_str(), &fno_in, &fno_out, NULL);
